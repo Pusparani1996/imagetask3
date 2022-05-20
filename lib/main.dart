@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
        theme: ThemeData(
-       primarySwatch: Colors.blue,
+       primarySwatch: Colors.orange,
       ),
       
       home: const MyHomePage(title: 'Jamie Lannister'),
@@ -64,24 +64,33 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin{
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     
-                    Icon(Icons.menu,
-                    size: 50,),
-                    Icon(Icons.account_box_rounded,
-                    size: 50,),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 40,top: 50),
+                      child: Icon(Icons.menu,
+                      size: 50,),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 40,top: 50),
+                      child: Icon(Icons.account_box_rounded,
+                      size: 50,),
+                    ),
                     //SizedBox(height: 300,)
                   ],
                       
                 ),
                
-                Text(" Where would you like to go ?",style: TextStyle(color: Colors.white,fontSize: 40),),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 50),
+                  child: Text(" Where would you like to go ?",style: TextStyle(color: Colors.white,fontSize: 40),),
+                ),
               ],
               ),
               ),
               Container(
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height*0.06,
-                color: Colors.green,
-                child: TabBar( controller: _TabController,tabs: [Tab(text: "Popular",),
+                color: Colors.white,
+                child: TabBar( labelColor: Colors.black,controller: _TabController,tabs: [Tab(text: "Popular",),
                 Tab(text: "Recomended",),
                 Tab(text: "Cost-effect",),
                ]
@@ -90,12 +99,12 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin{
               Container(
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height*0.30,
-                color: Colors.red,
+                color: Color.fromARGB(255, 247, 246, 246),
                 child: TabBarView( controller: _TabController,children: [
-                Image.asset("assets/images/loktak lake.jpg"),
-                Image.asset("assets/images/lotus tample.jpg"),
-                Image.asset("assets/images/red fort.jpg"),
-                ]),
+                Image.asset("assets/images/loktak_lake.jpg"),
+                Image.asset("assets/images/lotus_tample.jpg"),
+                Image.asset("assets/images/red_fort.jpg"),
+                ],),
 
               )
              
